@@ -37,6 +37,18 @@
   }
 } */
 
+.text-link {
+  color: white;
+  text-decoration: inherit;
+}
+
+.text-link a:hover {
+  color: white;
+  border-bottom: 3px solid white;
+}
+
+
+
 .center {
   height: 100vh;
   display: grid;
@@ -54,6 +66,7 @@
   color: white;
 }
 .nav-link-custom a:hover {
+  text-decoration-color: white;
   border-bottom: 3px solid white;
-  color: "inherit";
+  
 }
