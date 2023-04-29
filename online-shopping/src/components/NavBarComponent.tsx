@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import logo from "../logo.svg";
 
 const NavBarComponent: React.FC<{}> = ({}) => {
   const style = { textDecoration: "none", color: "inherit" };
@@ -13,6 +14,14 @@ const NavBarComponent: React.FC<{}> = ({}) => {
       <Container>
         <Navbar.Brand>
           <Link to="/" style={style}>
+          <img
+              alt=""
+              src={logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              id="App-logo"
+            />{' '}
             Shop Online
           </Link>
         </Navbar.Brand>
@@ -25,12 +34,11 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               </Link>
             </Nav.Link>
             <NavDropdown
-              className="nav-link-custom"
               title="Laptops"
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item>
-                <Link to="/" style={style}>
+                <Link to="/" style={style} className="nav-link-custom">
                   Apple
                 </Link>
               </NavDropdown.Item>
@@ -40,7 +48,7 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               <NavDropdown.Divider />
               <NavDropdown.Item>
                 <Link to="/laptops" style={style}>
-                  VIEW ALL
+                  All Laptops
                 </Link>
               </NavDropdown.Item>
             </NavDropdown>
@@ -50,14 +58,15 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               title="Phone"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item >Phones</NavDropdown.Item>
               <NavDropdown.Item >
-                Another action
+                iPhone
               </NavDropdown.Item>
-              <NavDropdown.Item >Something</NavDropdown.Item>
+              <NavDropdown.Item >Samsung</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item >
-                Separated link
+              <Link to="/phones" style={style}>
+                All Phones
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -66,14 +75,15 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               title="TV's"
               id="collasible-nav-dropdown"
             >
-              <NavDropdown.Item >TV's</NavDropdown.Item>
               <NavDropdown.Item >
-                Another action
+                LG
               </NavDropdown.Item>
-              <NavDropdown.Item >Something</NavDropdown.Item>
+              <NavDropdown.Item >Samsung</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item >
-                Separated link
+              <Link to="/tv" style={style}>
+                All T.V's
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

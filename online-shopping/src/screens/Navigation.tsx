@@ -6,6 +6,7 @@ import Cart from "./cart/Cart";
 import Store from "./store/Store";
 import Phones from "./phones/Phones";
 import Laptops from "./laptops/Laptops";
+import Tv from "./tv/Tv";
 
 const Navigation: React.FC<{}> = ({}) => {
   return (
@@ -18,6 +19,7 @@ const Navigation: React.FC<{}> = ({}) => {
           <Route path="/store" element={ <Store /> } />
           <Route path="/phones" element={ <Phones /> } />
           <Route path="/laptops" element={ <Laptops /> } />
+          <Route path="/tv" element={ <Tv />} />
         </Routes>
       </Router>
     </>
