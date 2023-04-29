@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -15,12 +16,10 @@ const NavBarComponent: React.FC<{}> = ({}) => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="nav-link-custom">
-              <Link to="/" style={style}>
-                Home
-              </Link>
-            </Nav.Link>
-            <Nav.Link component={Link}>
+            <LinkContainer to="/">
+              <Nav.Link className="nav-link-custom">Home</Nav.Link>
+            </LinkContainer>
+            <Nav.Link>
               <Link to="/store" style={style}>
                 Store
               </Link>
@@ -36,7 +35,9 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               <NavDropdown.Item href="#action/3.2">Lenovo</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item>
-                <Link to="/laptops" style={style}>VIEW ALL</Link>
+                <Link to="/laptops" style={style}>
+                  VIEW ALL
+                </Link>
               </NavDropdown.Item>
             </NavDropdown>
 
