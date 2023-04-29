@@ -6,6 +6,8 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 
 const NavBarComponent: React.FC<{}> = ({}) => {
+  const style = { textDecoration: "none", color: "inherit" };
+
   return (
     <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
       <Container>
@@ -14,28 +16,27 @@ const NavBarComponent: React.FC<{}> = ({}) => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link className="nav-link-custom">
-              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
+              <Link to="/" style={style}>
                 Home
               </Link>
             </Nav.Link>
-            <Nav.Link className="nav-link-custom">
-              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                Electronics
+            <Nav.Link component={Link}>
+              <Link to="/store" style={style}>
+                Store
               </Link>
             </Nav.Link>
-            <NavDropdown className="nav-link-custom" title="Laptops" id="collasible-nav-dropdown">
+            <NavDropdown title="Laptops" id="collasible-nav-dropdown">
               <NavDropdown.Item>
-                <Link to="/" style={{ textDecoration: "none", color: "inherit" }}>
-                  Laptops
+                <Link to="/" style={style}>
+                  Apple
                 </Link>
               </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Dell</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">HP</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Lenovo</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
+              <NavDropdown.Item>
+                <Link to="/laptops" style={style}>VIEW ALL</Link>
               </NavDropdown.Item>
             </NavDropdown>
 
@@ -55,7 +56,11 @@ const NavBarComponent: React.FC<{}> = ({}) => {
               </NavDropdown.Item>
             </NavDropdown>
 
-            <NavDropdown className="nav-link-custom" title="TV's" id="collasible-nav-dropdown">
+            <NavDropdown
+              className="nav-link-custom"
+              title="TV's"
+              id="collasible-nav-dropdown"
+            >
               <NavDropdown.Item href="#action/3.1">TV's</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -68,7 +73,14 @@ const NavBarComponent: React.FC<{}> = ({}) => {
             </NavDropdown>
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">View cart</Nav.Link>
+            <Nav.Link>
+              <Link
+                to="/cart"
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                View cart
+              </Link>
+            </Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link>
