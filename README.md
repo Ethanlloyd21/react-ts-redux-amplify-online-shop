@@ -1,0 +1,1 @@
+# react-ts-redux-amplify-online-shop
