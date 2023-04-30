@@ -1,10 +1,10 @@
 import React from "react";
-import NavBarComponent from "../components/NavBarComponent";
+
 
 const Navigation: React.FC<{}> = ({}) => {
   return (
     <>
-        <NavBarComponent />
+        <h1>Welcome to Ultra Electro Cloud!</h1>
     </>
   );
 };

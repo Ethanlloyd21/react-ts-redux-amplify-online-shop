@@ -1,10 +1,11 @@
 import React from 'react';
+import Navigation from './screens/Navigation';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <h1>Welcome to Ultra Electro Magnetic Cloud!</h1>
+      <Navigation />
     </div>
   );
 }
