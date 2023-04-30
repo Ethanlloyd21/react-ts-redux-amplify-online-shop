@@ -5,6 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import logo from "../logo.svg";
+import { BsBagCheck, BsFillCartFill } from "react-icons/bs";
 
 const NavBarComponent: React.FC<{}> = ({}) => {
   const style = { textDecoration: "none", color: "inherit" };
@@ -90,7 +91,7 @@ const NavBarComponent: React.FC<{}> = ({}) => {
           <Nav>
             <Nav.Link className="nav-link-custom">
               <Link to="/cart" style={style}>
-                View cart
+                View cart{" "}<BsFillCartFill size={20} />
               </Link>
             </Nav.Link>
             {/* <Nav.Link eventKey={2} href="#memes">
