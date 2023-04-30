@@ -34,59 +34,21 @@ const NavBarComponent: React.FC<{}> = ({}) => {
                 Store
               </Link>
             </Nav.Link>
-            <NavDropdown
-              title="Laptops"
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item>
-                <Link to="/" style={style} className="nav-link-custom">
-                  Apple
-                </Link>
-              </NavDropdown.Item>
-              <NavDropdown.Item >Dell</NavDropdown.Item>
-              <NavDropdown.Item >HP</NavDropdown.Item>
-              <NavDropdown.Item >Lenovo</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item>
-                <Link to="/laptops" style={style}>
-                  All Laptops
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-
-            <NavDropdown
-              className="nav-link-custom"
-              title="Phone"
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item >
-                iPhone
-              </NavDropdown.Item>
-              <NavDropdown.Item >Samsung</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item >
+            <Nav.Link className="nav-link-custom">
               <Link to="/phones" style={style}>
-                All Phones
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
-
-            <NavDropdown
-              className="nav-link-custom"
-              title="TV's"
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item >
-                LG
-              </NavDropdown.Item>
-              <NavDropdown.Item >Samsung</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item >
-              <Link to="/tv" style={style}>
-                All T.V's
-                </Link>
-              </NavDropdown.Item>
-            </NavDropdown>
+                iPhone
+              </Link>
+            </Nav.Link>
+            <Nav.Link className="nav-link-custom">
+              <Link to="/laptops" style={style}>
+                MacBook
+              </Link>
+            </Nav.Link>
+            <Nav.Link className="nav-link-custom">
+              <Link to="/" style={style}>
+                iWatch
+              </Link>
+            </Nav.Link>
           </Nav>
           <Nav>
             <Nav.Link className="nav-link-custom">

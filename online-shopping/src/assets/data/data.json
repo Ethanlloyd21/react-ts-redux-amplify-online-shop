@@ -1,0 +1,98 @@
+[
+    {
+        "id": "1",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Pro 13\"",
+        "price": 1299,
+        "top_description": "M2 Chip"
+    },
+    {
+        "id": "2",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Pro 14\"",
+        "price": 1999,
+        "top_description": "M2 Pro"
+    },
+    {
+        "id": "3",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Pro 16\"",
+        "price": 2499,
+        "top_description": "M2 Max Chip"
+    },
+    {
+        "id": "4",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Air",
+        "price": 999,
+        "top_description": "M1 Chip"
+    },
+    {
+        "id": "5",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Air",
+        "price": 1199,
+        "top_description": "M2 Chip 256GB"
+    },
+    {
+        "id": "6",
+        "category": "laptop",
+        "brand": "macbook",
+        "name": "Mac Book Air",
+        "price": 1999,
+        "top_description": "M2 Chip 512GB"
+    },
+    {
+        "id": "7",
+        "category": "phone",
+        "brand": "iphone",
+        "name": "iPhone 13",
+        "price": 599,
+        "top_description": "As amazing as ever"
+    },
+    {
+        "id": "8",
+        "category": "phone",
+        "brand": "iphone",
+        "name": "iPhone 14",
+        "price": 799,
+        "top_description": "A total powerhouse"
+    },
+    {
+        "id": "9",
+        "category": "phone",
+        "brand": "iphone",
+        "name": "iPhone 14 Pro",
+        "price": 999,
+        "top_description": "The ultimate iPhone"
+    },
+    {
+        "id": "10",
+        "category": "watch",
+        "brand": "iwatch",
+        "name": "Apple Watch Series 8",
+        "price": 399,
+        "top_description": "45mm"
+    },
+    {
+        "id": "11",
+        "category": "watch",
+        "brand": "iwatch",
+        "name": "Apple Watch SE",
+        "price": 249,
+        "top_description": "44mm"
+    },
+    {
+        "id": "12",
+        "category": "watch",
+        "brand": "iwatch",
+        "name": "Apple Watch Ultra",
+        "price": 799,
+        "top_description": "49mm"
+    }
+]
