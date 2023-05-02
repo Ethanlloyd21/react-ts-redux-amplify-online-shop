@@ -16,7 +16,6 @@
 }
 
 
-
 .center {
   height: 100vh;
   display: grid;
@@ -33,5 +32,59 @@
 .nav-link-custom a:hover {
   text-decoration-color: white;
 
-  
 }
+
+/** Buttons */
+
+.rounded-style {
+  border-radius: 50%;
+  padding: 20px;
+}
+
+/** Cards.tsx */
+
+.card {
+  border-color: white !important;
+}
+
+
+.div-row {
+  padding-top: 50vh;
+  padding-bottom: 50vh;
+}
+
+.card-body-alignment {
+  display: grid;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+@media (min-width: 2000px) {
+  #item-card {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1379px) {
+  #item-card {
+    width: auto;
+    height: 20rem;
+  }
+}
+
+@media (min-width: 993px) {
+  #item-card {
+    width: auto;
+    height: 40rem;
+  }
+}
+
+@media (min-width: 900px) {
+  #item-card {
+    width: auto;
+    height: 100%;
+  }
+}
+
