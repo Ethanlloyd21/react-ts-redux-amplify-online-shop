@@ -26,7 +26,7 @@ export interface InitialStateInterface {
 
 const initialState: InitialStateInterface = {
     cartItems: [],
-    amount: 3,
+    amount: 0,
     total: 0,
     isLoading: true,
 }
@@ -36,25 +36,29 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         clearCart: (state) => {
-            state.cartItems = []
+            state.cartItems = [];
+            state.amount = 0;
         },
         removeItem: (state, action) => {
             const itemId = action.payload;
             state.cartItems = state.cartItems.filter((item: any) => item.id !== itemId);
+            state.amount = state.amount - 1;
         },
         increase: (state, { payload }) => {
             console.log(payload);
             const cartItem = state.cartItems.find((item: any) => item.id === payload.id);
             cartItem.amount = cartItem.amount + 1;
+            state.amount = state.amount + 1;
         },
         decrease: (state, { payload }) => {
             const cartItem = state.cartItems.find((item: any) => item.id === payload.id);
-            cartItem.amount = cartItem.amount -1;
+            cartItem.amount = cartItem.amount - 1;
+            state.amount = state.amount - 1;
         },
         addtoCart: (state, action) => {
             const item = action.payload;
-            console.log(item);
             state.cartItems.push(item);
+            state.amount = state.amount + 1;
 
         }
         // calculateTotals: (state) => {

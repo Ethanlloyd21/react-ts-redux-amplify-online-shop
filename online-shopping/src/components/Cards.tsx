@@ -30,7 +30,7 @@ const Cards: React.FC<Props> = ({
   const dispath = useDispatch();
   // const { cartItems, total, amount } = useSelector((store: any) => store.cart);
 
-  const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount }
+  const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount };
 
   return (
     <div className="card" id="item-card">
