@@ -16,8 +16,6 @@ const CartContainer = () => {
   const { cartItems, total, amount } = useSelector((store: any) => store.cart);
   const dispath = useDispatch();
 
-  console.log(cartItems);
-
   if (amount < 1) {
     return (
       <section className="cart">

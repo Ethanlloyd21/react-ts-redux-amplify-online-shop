@@ -1,7 +1,7 @@
 
 //Redux-toolkit
 import { useSelector } from "react-redux";
-import { removeItem } from "../../redux/features/cart/cartSlice";
+import { removeItem, increase, decrease } from "../../redux/features/cart/cartSlice";
 import { useDispatch } from "react-redux";
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import "./cart.css";
@@ -11,14 +11,13 @@ interface CartItemProps {
   name: string;
   price: number;
   image: string;
+  amount: number;
 
 }
 
-const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
+const CartItem: React.FC<CartItemProps> = ({ id, name, price, image, amount }) => {
   const dispatch = useDispatch();
 
-  const { amount } = useSelector((state: any) => state.cart);
- 
   return (
     <article className='cart-item'>
       <img src={image} alt={name} />
@@ -37,22 +36,22 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
       <div>
         <button
           className='amount-btn'
-          // onClick={() => {
-          //   dispatch(increase({ id }));
-          // }}
+          onClick={() => {
+            dispatch(increase({ id }));
+          }}
         >
           <BsChevronUp />
         </button>
         <p className='amount'>{amount}</p>
         <button
           className='amount-btn'
-          // onClick={() => {
-          //   if (amount === 1) {
-          //     dispatch(removeItem(id));
-          //     return;
-          //   }
-          //   dispatch(decrease({ id }));
-          // }}
+          onClick={() => {
+            if (amount === 1) {
+              dispatch(removeItem(id));
+              return;
+            }
+            dispatch(decrease({ id }));
+          }}
         >
           <BsChevronDown />
         </button>
