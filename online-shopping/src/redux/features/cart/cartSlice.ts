@@ -4,7 +4,7 @@ import checkoutCart from "../../../assets/data/checkoutCart";
 
 const initialState = {
     cartItems: checkoutCart,
-    amount: 1,
+    amount: 3,
     total: 0,
     isLoading: true,
 }
@@ -13,10 +13,11 @@ const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-
+        clearCart: (store) => store.cartItems = [],
     }
 }); 
 
-// console.log(cartSlice)
+export const { clearCart } = cartSlice.actions;
+
 
 export default cartSlice.reducer;

@@ -3,11 +3,15 @@ import CartItem from "./CartItem";
 import { Button } from "react-bootstrap";
 
 //Redux-toolkit
-import { useSelector } from "react-redux";
+import { useDispatch ,useSelector } from "react-redux";
+import { clearCart } from "../../redux/features/cart/cartSlice";
+
 import "./cart.css";
+
 
 const CartContainer = () => {
   const { cartItems, total, amount } = useSelector((store: any) => store.cart);
+  const dispath = useDispatch();
 
   console.log(cartItems);
 
@@ -47,7 +51,7 @@ const CartContainer = () => {
             </div>
           </h4>
         </div>
-        <Button variant="outline-danger">Clear Cart</Button>
+        <Button variant="outline-danger" onClick={() => dispath(clearCart())}>Clear Cart</Button>
       </footer>
     </section>
   );
