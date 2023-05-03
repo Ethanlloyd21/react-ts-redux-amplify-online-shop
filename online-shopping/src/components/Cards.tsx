@@ -1,6 +1,10 @@
 import React from "react";
 import { Button, Image } from "react-bootstrap";
 
+//Readux toolkit
+import { useSelector, useDispatch } from "react-redux";
+import { addtoCart } from "../redux/features/cart/cartSlice"
+
 interface Props {
   id: string;
   category: string;
@@ -9,6 +13,7 @@ interface Props {
   price: number;
   top_description: string;
   image: string;
+  amount: number;
 }
 
 const Cards: React.FC<Props> = ({
@@ -19,10 +24,17 @@ const Cards: React.FC<Props> = ({
   price,
   top_description,
   image,
+  amount,
 }) => {
+
+  const dispath = useDispatch();
+  // const { cartItems, total, amount } = useSelector((store: any) => store.cart);
+
+  const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount }
+
   return (
     <div className="card" id="item-card">
-      <Image src={image} className="card-img-top" alt={`card-${id}`} fluid/>
+      <Image src={image} className="card-img-top" alt={`card-${id}`} fluid />
       <div
         className="card-body"
         style={{
@@ -36,8 +48,16 @@ const Cards: React.FC<Props> = ({
         <h2 style={{ fontWeight: 600 }}>{name}</h2>
         <p>${price}</p>
       </div>
-      <div style={{ display: "flex", alignContent: "center", justifyContent: "center", justifyItems: "center" }} className='text-center'>
-        <Button className="rounded-style" variant="outline-primary">
+      <div
+        style={{
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
+          justifyItems: "center",
+        }}
+        className="text-center"
+      >
+        <Button className="rounded-style" variant="outline-primary" onClick={() => dispath(addtoCart(itemSelected)) }>
           Buy
         </Button>
       </div>

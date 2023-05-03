@@ -16,7 +16,7 @@ const storeStocks = [
         "name": "Mac Book Pro 14\"",
         "price": 1999,
         "top_description": "M2 Pro",
-        "image": "https://www.apple.com/v/macbook-pro/ah/images/overview/hero_14_16__bux8byft94oi_medium_2x.jpg",
+        "image": "https://www.apple.com/v/macbook-pro/ah/images/overview/hero_13__d1tfa5zby7e6_medium_2x.jpg",
         "amount": 1
     },
     {
@@ -26,7 +26,7 @@ const storeStocks = [
         "name": "Mac Book Pro 16\"",
         "price": 2499,
         "top_description": "M2 Max Chip",
-        "image": "https://www.apple.com/v/macbook-pro/ah/images/overview/hero_14_16__bux8byft94oi_medium_2x.jpg",
+        "image": "https://www.apple.com/v/macbook-pro/ah/images/overview/hero_13__d1tfa5zby7e6_medium_2x.jpg",
         "amount": 1
     },
     {
@@ -36,7 +36,7 @@ const storeStocks = [
         "name": "Mac Book Air",
         "price": 999,
         "top_description": "M1 Chip",
-        "image": "https://www.apple.com/v/macbook-air/o/images/overview/hero_mba_m1__mfge6fbp7t2m_medium_2x.jpg",
+        "image": "https://www.apple.com/v/macbook-air/o/images/overview/hero_mba_m2__ejbs627dj7ee_medium_2x.jpg",
         "amount": 1
     },
     {
