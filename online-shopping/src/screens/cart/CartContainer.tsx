@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import "./cart.css";
 
 const CartContainer = () => {
-  const { cartItems, total, amount } = useSelector((state: any) => state.cart);
+  const { cartItems, total, amount } = useSelector((store: any) => store.cart);
 
   console.log(cartItems);
 
@@ -31,10 +31,6 @@ const CartContainer = () => {
           return (
             <CartItem
               key={item.id}
-              // id={item.id}
-              // name={item.name}
-              // price={item.price}
-              // image={item.image}
               {...item}
             />
           );
