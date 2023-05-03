@@ -1,6 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import checkoutCart from "../../../assets/data/checkoutCart";
+// import storeStocks from "../../../assets/data/storeStocks";
 
+
+// export interface Cart {
+//     id: string,
+//     category: string,
+//     brand: string,
+//     name: string,
+//     price: number,
+//     top_description: string,
+//     image: string,
+//     amount: number,
+// }
+
+// interface CartState {
+//     cart: Cart[];
+// }
 export interface InitialStateInterface {
     cartItems: any,
     amount: number,
@@ -35,6 +51,11 @@ const cartSlice = createSlice({
             const cartItem = state.cartItems.find((item: any) => item.id === payload.id);
             cartItem.amount = cartItem.amount -1;
         },
+        // addtoCart: (state, action) => {
+        //     const item = action.payload;
+        //     console.log(item);
+
+        // }
         // calculateTotals: (state) => {
         //     let amount = 0;
         // }
