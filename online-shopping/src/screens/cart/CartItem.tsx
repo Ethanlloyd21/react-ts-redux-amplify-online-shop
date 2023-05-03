@@ -1,7 +1,8 @@
 
 //Redux-toolkit
 import { useSelector } from "react-redux";
-
+import { removeItem } from "../../redux/features/cart/cartSlice";
+import { useDispatch } from "react-redux";
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import "./cart.css";
 
@@ -14,7 +15,7 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
-
+  const dispatch = useDispatch();
 
   const { amount } = useSelector((state: any) => state.cart);
  
@@ -26,9 +27,9 @@ const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
         <h4 className='item-price'>${price}</h4>
         <button
           className='remove-btn'
-          // onClick={() => {
-          //   dispatch(removeItem(id));
-          // }}
+          onClick={() => {
+            dispatch(removeItem(id));
+          }}
         >
           remove
         </button>
