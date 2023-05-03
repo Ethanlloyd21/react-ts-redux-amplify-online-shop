@@ -36,11 +36,11 @@
     margin-top: 2.25rem;
     border-radius: var(--radius);
   }
-  .clear-btn:hover {
+  /* .clear-btn:hover {
     background: var(--clr-red-light);
     color: var(--clr-red-dark);
     border-color: var(--clr-red-light);
-  }
+  } */
   .confirm-btn {
     border-color: var(--clr-primary);
     color: var(--clr-primary);
@@ -105,4 +105,11 @@
     background: var(--clr-grey-5);
     border-color: transparent;
     border-width: 0.25px;
+  }
+
+  /** View Cart */
+
+  .div-button-spacing {
+    display: flex;
+    justify-content: space-between;
   }

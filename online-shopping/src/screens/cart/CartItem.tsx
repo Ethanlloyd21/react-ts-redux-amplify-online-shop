@@ -1,4 +1,7 @@
 import { useState } from 'react';
+//Redux-toolkit
+import { useSelector } from "react-redux";
+
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import "./cart.css";
 
@@ -12,7 +15,8 @@ interface CartItemProps {
 
 const CartItem: React.FC<CartItemProps> = ({ id, name, price, image }) => {
 
-  const [amount, setAmount] = useState(1);
+
+  const { amount } = useSelector((state: any) => state.cart);
  
   return (
     <article className='cart-item'>

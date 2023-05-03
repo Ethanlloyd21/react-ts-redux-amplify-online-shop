@@ -4,7 +4,7 @@ import checkoutCart from "../../../assets/data/checkoutCart";
 
 const initialState = {
     cartItems: checkoutCart,
-    amount: 0,
+    amount: 1,
     total: 0,
     isLoading: true,
 }
