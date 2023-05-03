@@ -1,16 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import logo from "../logo.svg";
 import { BsFillCartFill } from "react-icons/bs";
-import { Col, Row } from "react-bootstrap";
-import CartItem from "../screens/cart/CartItem";
 import CartContainer from "../screens/cart/CartContainer";
 
 interface VerticalModalProps {
@@ -46,8 +43,11 @@ const MyVerticallyCenteredModal: React.FC<VerticalModalProps> = ({
 };
 
 const NavBarComponent: React.FC<{}> = ({}) => {
+  console.log(useSelector((store) => {console.log(store)}));
   const style = { textDecoration: "none", color: "inherit" };
   const [modalShow, setModalShow] = useState<boolean>(false);
+
+  const { amount } = useSelector((store: any) => store.cart);
 
   return (
     <div>
@@ -100,7 +100,7 @@ const NavBarComponent: React.FC<{}> = ({}) => {
                 // onClick={() => setModalShow(true)}
               >
                 <Link to="/cartcontainer" style={style}>
-                View cart <BsFillCartFill size={20} />
+                Cart <BsFillCartFill size={20} />{amount}
                 </Link>
               </Nav.Link>
               {/* <Nav.Link eventKey={2} href="#memes">
