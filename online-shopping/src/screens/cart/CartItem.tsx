@@ -6,10 +6,13 @@ import { useDispatch } from "react-redux";
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
 import "./cart.css";
 
-interface CartItemProps {
+export interface CartItemProps {
   id: string;
+  category: string;
+  brand: string;
   name: string;
   price: number;
+  top_description: string;
   image: string;
   amount: number;
 
