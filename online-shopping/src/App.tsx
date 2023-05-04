@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { calculateTotals } from './redux/features/cart/cartSlice';
 import './App.css';
 
+
 function App() {
 
   const { cartItems } = useSelector((state: any) => state.cart);
