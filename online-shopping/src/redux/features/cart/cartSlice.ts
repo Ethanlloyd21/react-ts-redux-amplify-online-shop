@@ -1,22 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import checkoutCart from "../../../assets/data/checkoutCart";
-import storeStocks from "../../../assets/data/storeStocks";
-
-
-// export interface Cart {
-//     id: string,
-//     category: string,
-//     brand: string,
-//     name: string,
-//     price: number,
-//     top_description: string,
-//     image: string,
-//     amount: number,
-// }
-
-// interface CartState {
-//     cart: Cart[];
-// }
 export interface InitialStateInterface {
     cartItems: any,
     amount: number,
