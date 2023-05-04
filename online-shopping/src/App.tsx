@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Navigation from './screens/Navigation';
 import { useSelector, useDispatch } from 'react-redux';
 import { calculateTotals } from './redux/features/cart/cartSlice';
+import ModalCartConfirm from './components/ModalCartConfirm';
 import './App.css';
 
 
@@ -16,6 +17,7 @@ function App() {
   
   return (
     <div className="App">
+      {/* <ModalCartConfirm /> */}
       <Navigation />
     </div>
   );
