@@ -9,6 +9,7 @@ import './App.css';
 function App() {
 
   const { cartItems } = useSelector((state: any) => state.cart);
+  const { isOpen } = useSelector((state: any) => state.modal);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -17,7 +18,8 @@ function App() {
   
   return (
     <div className="App">
-      {/* <ModalCartConfirm /> */}
+      { isOpen &&  <ModalCartConfirm /> }
+     
       <Navigation />
     </div>
   );

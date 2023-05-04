@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+
 import CartItem from "./CartItem";
-import { Button, Modal } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 
 //Redux-toolkit
 import { useDispatch, useSelector } from "react-redux";
-import { clearCart } from "../../redux/features/cart/cartSlice";
-
+import { openModal } from "../../redux/features/modal/modalSlice";
 import "./cart.css";
 
-const CartContainer = () => {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  const { cartItems, total, amount } = useSelector((store: any) => store.cart);
+const CartContainer = () => {
+
+  const { cartItems, total, amount } = useSelector((state: any) => state.cart);
   const dispath = useDispatch();
 
   if (amount < 1) {
@@ -28,31 +25,6 @@ const CartContainer = () => {
   }
   return (
     <>
-       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Please confirm!</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Button 
-            variant="danger" 
-            onClick={() => {
-              dispath(clearCart());
-              handleClose();
-            }
-          }>
-            Yes, I want to clear my cart!
-          </Button>{" "}
-          <Button variant="secondary" onClick={handleClose}>No, go back to my cart.</Button>
-        </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer> */}
-      </Modal>
       <section className="cart">
         <header>
           <h2>your bag</h2>
@@ -78,7 +50,7 @@ const CartContainer = () => {
           {cartItems.length ? (
             <Button
               variant="outline-danger"
-              onClick={() => setShow(true)}
+              onClick={() => dispath(openModal())}
             >
               Clear Cart
             </Button>

@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Image } from "react-bootstrap";
 
 //Readux toolkit
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addtoCart } from "../redux/features/cart/cartSlice"
 
 interface Props {
@@ -28,8 +28,7 @@ const Cards: React.FC<Props> = ({
 }) => {
 
   const dispath = useDispatch();
-  // const { cartItems, total, amount } = useSelector((store: any) => store.cart);
-
+  
   const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount };
 
   return (
