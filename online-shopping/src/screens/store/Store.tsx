@@ -13,7 +13,6 @@ const Store = () => {
 
   return (
     <Container>
-      <div>
         <Row
           xs={1}
           sm={1}
@@ -32,7 +31,6 @@ const Store = () => {
             </Col>
           ))}
         </Row>
-      </div>
     </Container>
   );
 };

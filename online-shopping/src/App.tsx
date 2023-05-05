@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import Navigation from './screens/Navigation';
-import { useSelector, useDispatch } from 'react-redux';
 import { calculateTotals } from './redux/features/cart/cartSlice';
-import { getCartItems } from './redux/features/cart/cartSlice';
+import { getCartItems } from './redux/features/store/storeSlice';
 import ModalCartConfirm from './components/ModalCartConfirm';
 import './App.css';
 

@@ -1,23 +1,13 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-// import axios from "axios";
 import { CartItemProps } from "../../../state/typesofCart";
 import { InitialStateInterface } from "../../../state/typesofCart";
+import axios from 'axios';
 
 //CloudFront API link of store inventory
 const CLOUDFRONT_API = "https://d2i03nztde2ppv.cloudfront.net/storeInventory.json";
-const url = "https://course-api.com/react-useReducer-cart-project"
-// interface InitialStateInterface {
-//   cartItems: any;
-//   storeInventory: any;
-//   amount: number;
-//   total: number;
-//   isLoading: boolean;
-//   error: string | null
-// }
 
 const initialState = {
   cartItems: [],
-  storeInventory: [],
   amount: 0,
   total: 0,
   isLoading: true,
@@ -26,18 +16,18 @@ const initialState = {
 
 
 export const getCartItems = createAsyncThunk("cart/getCartItems", async (data, thunkApi) => {
-    // try {
-    //     const response = await axios.get<CartItemProps []>(CLOUDFRONT_API);
-    //     return response.data;
-    // } catch (error: any) {
-    //     return thunkApi.rejectWithValue(error.message);
-    // }
-  return fetch(CLOUDFRONT_API)
-    .then((response) => response.json())
-    .catch((err) => console.log(err));
+
+  try {
+        const response = await axios.get<CartItemProps []>(CLOUDFRONT_API);
+        return response;
+    } catch (error: any) {
+        return thunkApi.rejectWithValue(error.message);
+    }
+    
+  // return fetch(CLOUDFRONT_API)
+  //   .then((response) => response.json())
+  //   .catch((err) => console.log(err));
 });
-
-
 
 const cartSlice = createSlice({
   name: "cart",
@@ -89,9 +79,9 @@ const cartSlice = createSlice({
     builder.addCase(getCartItems.pending, (state) => {
         state.isLoading = true;
     })
-    .addCase(getCartItems.fulfilled, (state, action) => {
+    .addCase(getCartItems.fulfilled, (state) => {
         state.isLoading = false;
-        state.storeInventory = action.payload;
+        // state.storeInventory = action.payload;
     })
     .addCase(getCartItems.rejected, (state) => {
         state.isLoading = false;

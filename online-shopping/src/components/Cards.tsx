@@ -6,17 +6,6 @@ import { CartItemProps } from "../state/typesofCart";
 import { addtoCart } from "../redux/features/cart/cartSlice"
 import { useAppDispatch } from "../hooks/hooks";
 
-// interface Props {
-//   id: string;
-//   category: string;
-//   brand: string;
-//   name: string;
-//   price: number;
-//   top_description: string;
-//   image: string;
-//   amount: number;
-// }
-
 const Cards: React.FC<CartItemProps> = ({
   id,
   category,
@@ -28,7 +17,6 @@ const Cards: React.FC<CartItemProps> = ({
   amount,
 }) => {
 
-  // const dispath = useDispatch();
   const dispatch = useAppDispatch();
   
   const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount };

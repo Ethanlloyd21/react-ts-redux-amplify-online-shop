@@ -1,4 +1,4 @@
-import React from "react";
+
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import NavBarComponent from "../components/NavBarComponent";
 import Home from "./home/Home";
@@ -9,7 +9,7 @@ import Laptops from "./laptops/Laptops";
 import Tv from "./tv/Tv";
 import CartContainer from "./cart/CartContainer";
 
-const Navigation: React.FC<{}> = ({}) => {
+const Navigation = () => {
   return (
     <>
       <Router>

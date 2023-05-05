@@ -1,17 +1,19 @@
 
-import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../logo.svg";
 import { BsFillCartFill } from "react-icons/bs";
 import { useAppSelector } from "../hooks/hooks";
+import { LinkContainer } from "react-router-bootstrap";
 
 const NavBarComponent = () => {
-
-  console.log(useAppSelector((store) => {console.log(store)})); // console log the store for dev purposes
-  const style = { textDecoration: "none", color: "inherit" };
-
+  console.log(
+    useAppSelector((store) => {
+      console.log(store);
+    })
+  ); // console log the store for dev purposes
+  // const style = { textDecoration: "none", color: "inherit" };
 
   const { amount } = useAppSelector((store) => store.cart);
 
@@ -19,8 +21,8 @@ const NavBarComponent = () => {
     <div>
       <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand>
-            <Link to="/" style={style}>
+          <LinkContainer to="/">
+            <Navbar.Brand>
               <img
                 alt=""
                 src={logo}
@@ -30,40 +32,36 @@ const NavBarComponent = () => {
                 id="App-logo"
               />{" "}
               Shop Online
-            </Link>
-          </Navbar.Brand>
+            </Navbar.Brand>
+          </LinkContainer>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link className="nav-link-custom">
+              {/* <Nav.Link className="nav-link-custom" >
                 <Link to="/store" style={style}>
                   Store
                 </Link>
-              </Nav.Link>
-              <Nav.Link className="nav-link-custom">
-                <Link to="/phones" style={style}>
-                  iPhone
-                </Link>
-              </Nav.Link>
-              <Nav.Link className="nav-link-custom">
-                <Link to="/laptops" style={style}>
-                  MacBook
-                </Link>
-              </Nav.Link>
-              <Nav.Link className="nav-link-custom">
-                <Link to="/" style={style}>
-                  iWatch
-                </Link>
-              </Nav.Link>
+              </Nav.Link> */}
+              <LinkContainer to="/store">
+                <Nav.Link className="nav-link-custom">Store</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/phones">
+                <Nav.Link className="nav-link-custom">iPhone</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/laptops">
+                <Nav.Link className="nav-link-custom">MacBook</Nav.Link>
+              </LinkContainer>
+              <LinkContainer to="/">
+                <Nav.Link className="nav-link-custom">iWatch</Nav.Link>
+              </LinkContainer>
             </Nav>
             <Nav>
-              <Nav.Link
-                className="nav-link-custom"
-              >
-                <Link to="/cartcontainer" style={style}>
-                Cart <BsFillCartFill size={20} />{amount}
-                </Link>
-              </Nav.Link>
+              <LinkContainer to="/cartcontainer">
+                <Nav.Link className="nav-link-custom">
+                  Cart <BsFillCartFill size={20} />
+                  {amount}
+                </Nav.Link>
+              </LinkContainer>
               {/* <Nav.Link eventKey={2} href="#memes">
               Dank memes
             </Nav.Link> */}
