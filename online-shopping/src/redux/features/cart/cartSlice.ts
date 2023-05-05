@@ -1,12 +1,13 @@
 import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
-import axios from "axios";
+// import axios from "axios";
 import { CartItemProps } from "../../../screens/cart/CartItem";
 
 //CloudFront API link of store inventory
-const CLOUDFRONT_API = "https://mytest-bucket-619.s3.us-east-1.amazonaws.com/storeInventory.json";
+const CLOUDFRONT_API = "https://d2i03nztde2ppv.cloudfront.net/storeInventory.json";
 const url = "https://course-api.com/react-useReducer-cart-project"
 interface InitialStateInterface {
   cartItems: any;
+  storeInventory: any;
   amount: number;
   total: number;
   isLoading: boolean;
@@ -15,6 +16,7 @@ interface InitialStateInterface {
 
 const initialState = {
   cartItems: [],
+  storeInventory: [],
   amount: 0,
   total: 0,
   isLoading: true,
@@ -29,8 +31,7 @@ export const getCartItems = createAsyncThunk("cart/getCartItems", async (data, t
     // } catch (error: any) {
     //     return thunkApi.rejectWithValue(error.message);
     // }
-
-  return fetch(url)
+  return fetch(CLOUDFRONT_API)
     .then((response) => response.json())
     .catch((err) => console.log(err));
 });
@@ -89,7 +90,7 @@ const cartSlice = createSlice({
         console.log(action);
         console.log(state)
         state.isLoading = false;
-        state.cartItems = action.payload;
+        state.storeInventory = action.payload;
     })
     .addCase(getCartItems.rejected, (state) => {
         state.isLoading = false;
