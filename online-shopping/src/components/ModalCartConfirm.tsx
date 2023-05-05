@@ -1,18 +1,18 @@
 
 import { Button, Modal } from "react-bootstrap";
-import { useDispatch, useSelector } from "react-redux";
 import { clearCart } from "../redux/features/cart/cartSlice";
 import { closeModal } from "../redux/features/modal/modalSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
 
 const ModalCartConfirm = () => {
 
-    const { isOpen } = useSelector((state: any) => state.modal)
-    const dispath = useDispatch();
+    const { isOpen } = useAppSelector((state) => state.modal)
+    const dispatch = useAppDispatch();
 
   return (
 
     <>
-       <Modal show={isOpen} onHide={() => dispath(closeModal())}>
+       <Modal show={isOpen} onHide={() => dispatch(closeModal())}>
         <Modal.Header closeButton>
           <Modal.Title>Please confirm!</Modal.Title>
         </Modal.Header>
@@ -20,13 +20,13 @@ const ModalCartConfirm = () => {
           <Button 
             variant="danger" 
             onClick={() => {
-              dispath(clearCart());
-              dispath(closeModal());
+              dispatch(clearCart());
+              dispatch(closeModal());
             }
           }>
             Yes, I want to clear my cart!
           </Button>{" "}
-          <Button variant="secondary" onClick={() => dispath(closeModal())}>No, go back to my cart.</Button>
+          <Button variant="secondary" onClick={() => dispatch(closeModal())}>No, go back to my cart.</Button>
         </Modal.Body>
       </Modal>
     </>

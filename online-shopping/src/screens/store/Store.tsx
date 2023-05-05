@@ -1,13 +1,15 @@
-import React from "react";
+
 import { Row, Col, Container } from "react-bootstrap";
-import storeStocks from "../../assets/data/storeStocks";
 import Cards from "../../components/Cards";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector } from "../../hooks/hooks";
+import { CartItemProps } from "../../state/typesofCart";
 
 const Store = () => {
 
-  const { storeInventory } = useSelector((state: any) => state.store);
-  const dispath = useDispatch();
+  // const { storeInventory } = useSelector((state: any) => state.store);
+  // const dispath = useDispatch();
+
+  const { storeInventory } = useAppSelector((state) => state.store)
 
   return (
     <Container>
@@ -21,7 +23,7 @@ const Store = () => {
           className="g-4"
           style={{ paddingTop: 140, paddingBottom: 140 }}
         >
-          {storeInventory.map((item: any, index: React.Key | null | undefined) => (
+          {storeInventory.map((item: CartItemProps, index: number) => (
             <Col key={index}>
               <Cards
                 key={item.id}

@@ -32,8 +32,6 @@ const storeSlice = createSlice({
             state.isLoading = true;
         })
         .addCase(getCartItems.fulfilled, (state, action) => {
-            console.log(action);
-            console.log(state)
             state.isLoading = false;
             state.storeInventory = action.payload;
         })

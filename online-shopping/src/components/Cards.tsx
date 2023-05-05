@@ -1,22 +1,23 @@
 import React from "react";
 import { Button, Image } from "react-bootstrap";
+import { CartItemProps } from "../state/typesofCart";
 
 //Readux toolkit
-import { useDispatch } from "react-redux";
 import { addtoCart } from "../redux/features/cart/cartSlice"
+import { useAppDispatch } from "../hooks/hooks";
 
-interface Props {
-  id: string;
-  category: string;
-  brand: string;
-  name: string;
-  price: number;
-  top_description: string;
-  image: string;
-  amount: number;
-}
+// interface Props {
+//   id: string;
+//   category: string;
+//   brand: string;
+//   name: string;
+//   price: number;
+//   top_description: string;
+//   image: string;
+//   amount: number;
+// }
 
-const Cards: React.FC<Props> = ({
+const Cards: React.FC<CartItemProps> = ({
   id,
   category,
   brand,
@@ -27,7 +28,8 @@ const Cards: React.FC<Props> = ({
   amount,
 }) => {
 
-  const dispath = useDispatch();
+  // const dispath = useDispatch();
+  const dispatch = useAppDispatch();
   
   const itemSelected = { id: id, category: category, brand: brand, name: name, price: price, top_description: top_description, image: image, amount: amount };
 
@@ -56,7 +58,7 @@ const Cards: React.FC<Props> = ({
         }}
         className="text-center"
       >
-        <Button className="rounded-style" variant="outline-primary" onClick={() => dispath(addtoCart(itemSelected)) }>
+        <Button className="rounded-style" variant="outline-primary" onClick={() => dispatch(addtoCart(itemSelected)) }>
           Buy
         </Button>
       </div>

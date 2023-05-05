@@ -1,18 +1,19 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // import axios from "axios";
-import { CartItemProps } from "../../../screens/cart/CartItem";
+import { CartItemProps } from "../../../state/typesofCart";
+import { InitialStateInterface } from "../../../state/typesofCart";
 
 //CloudFront API link of store inventory
 const CLOUDFRONT_API = "https://d2i03nztde2ppv.cloudfront.net/storeInventory.json";
 const url = "https://course-api.com/react-useReducer-cart-project"
-interface InitialStateInterface {
-  cartItems: any;
-  storeInventory: any;
-  amount: number;
-  total: number;
-  isLoading: boolean;
-  error: string | null
-}
+// interface InitialStateInterface {
+//   cartItems: any;
+//   storeInventory: any;
+//   amount: number;
+//   total: number;
+//   isLoading: boolean;
+//   error: string | null
+// }
 
 const initialState = {
   cartItems: [],
@@ -36,6 +37,8 @@ export const getCartItems = createAsyncThunk("cart/getCartItems", async (data, t
     .catch((err) => console.log(err));
 });
 
+
+
 const cartSlice = createSlice({
   name: "cart",
   initialState,
@@ -47,21 +50,21 @@ const cartSlice = createSlice({
     removeItem: (state, action) => {
       const itemId = action.payload;
       state.cartItems = state.cartItems.filter(
-        (item: any) => item.id !== itemId
+        (item: CartItemProps) => item.id !== itemId
       );
       state.amount = state.amount - 1;
     },
     increase: (state, { payload }) => {
       console.log(payload);
       const cartItem = state.cartItems.find(
-        (item: any) => item.id === payload.id
+        (item: CartItemProps) => item.id === payload.id
       );
       cartItem.amount = cartItem.amount + 1;
       state.amount = state.amount + 1;
     },
     decrease: (state, { payload }) => {
       const cartItem = state.cartItems.find(
-        (item: any) => item.id === payload.id
+        (item: CartItemProps) => item.id === payload.id
       );
       cartItem.amount = cartItem.amount - 1;
       state.amount = state.amount - 1;
@@ -74,7 +77,7 @@ const cartSlice = createSlice({
     calculateTotals: (state) => {
       let amount = 0;
       let total = 0;
-      state.cartItems.forEach((item: any) => {
+      state.cartItems.forEach((item: CartItemProps) => {
         amount += item.amount;
         total += item.amount * item.price;
       });
@@ -87,8 +90,6 @@ const cartSlice = createSlice({
         state.isLoading = true;
     })
     .addCase(getCartItems.fulfilled, (state, action) => {
-        console.log(action);
-        console.log(state)
         state.isLoading = false;
         state.storeInventory = action.payload;
     })

@@ -1,17 +1,18 @@
 
 import CartItem from "./CartItem";
 import { Button } from "react-bootstrap";
+import { CartItemProps } from "../../state/typesofCart";
 
 //Redux-toolkit
-import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../redux/features/modal/modalSlice";
 import "./cart.css";
+import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 
 
 const CartContainer = () => {
 
-  const { cartItems, total, amount } = useSelector((state: any) => state.cart);
-  const dispath = useDispatch();
+  const { cartItems, total, amount } = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   if (amount < 1) {
     return (
@@ -30,7 +31,7 @@ const CartContainer = () => {
           <h2>your bag</h2>
         </header>
         <div>
-          {cartItems.map((item: any) => {
+          {cartItems.map((item: CartItemProps) => {
             return <CartItem key={item.id} {...item} />;
           })}
         </div>
@@ -50,7 +51,7 @@ const CartContainer = () => {
           {cartItems.length ? (
             <Button
               variant="outline-danger"
-              onClick={() => dispath(openModal())}
+              onClick={() => dispatch(openModal())}
             >
               Clear Cart
             </Button>

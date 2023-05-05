@@ -1,25 +1,24 @@
 
 //Redux-toolkit
-import { useSelector } from "react-redux";
 import { removeItem, increase, decrease } from "../../redux/features/cart/cartSlice";
-import { useDispatch } from "react-redux";
 import { BsChevronUp, BsChevronDown } from 'react-icons/bs';
+import { useAppDispatch } from "../../hooks/hooks";
+import { CartItemProps } from "../../state/typesofCart";
 import "./cart.css";
+// export interface CartItemProps {
+//   id: string;
+//   category: string;
+//   brand: string;
+//   name: string;
+//   price: number;
+//   top_description: string;
+//   image: string;
+//   amount: number;
 
-export interface CartItemProps {
-  id: string;
-  category: string;
-  brand: string;
-  name: string;
-  price: number;
-  top_description: string;
-  image: string;
-  amount: number;
-
-}
+// }
 
 const CartItem: React.FC<CartItemProps> = ({ id, name, price, image, amount }) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <article className='cart-item'>

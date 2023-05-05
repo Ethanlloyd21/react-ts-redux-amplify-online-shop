@@ -1,19 +1,19 @@
 
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import logo from "../logo.svg";
 import { BsFillCartFill } from "react-icons/bs";
+import { useAppSelector } from "../hooks/hooks";
 
 const NavBarComponent = () => {
 
-  console.log(useSelector((store) => {console.log(store)})); // console log the store for dev purposes
+  console.log(useAppSelector((store) => {console.log(store)})); // console log the store for dev purposes
   const style = { textDecoration: "none", color: "inherit" };
 
 
-  const { amount } = useSelector((store: any) => store.cart);
+  const { amount } = useAppSelector((store) => store.cart);
 
   return (
     <div>
