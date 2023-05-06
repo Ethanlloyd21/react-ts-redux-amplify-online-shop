@@ -19,6 +19,7 @@ export const getCartItems = createAsyncThunk("cart/getCartItems", async (_, thun
     } catch (error: any) {
         return thunkApi.rejectWithValue(error.message);
     }
+    
 //   return fetch(CLOUDFRONT_API)
 //     .then((response) => response.json())
 //     .catch((err) => console.log(err));
