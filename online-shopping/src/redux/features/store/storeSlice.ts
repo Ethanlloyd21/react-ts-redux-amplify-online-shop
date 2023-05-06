@@ -12,9 +12,10 @@ const initialState = {
     error: null,
 } as InitialStateStore
 
-export const getCartItems = createAsyncThunk("cart/getCartItems", async (data, thunkApi) => {
+export const getCartItems = createAsyncThunk("cart/getCartItems", async (_, thunkApi) => {
     try {
         const response = await axios.get<CartItemProps>(CLOUDFRONT_API);
+        console.log(response.data.filter((item) => item.category === "laptop"))
         return response.data;
     } catch (error: any) {
         return thunkApi.rejectWithValue(error.message);

@@ -1,4 +1,6 @@
 export interface CartItemProps {
+  filter(arg0: (item: any) => boolean): any;
+  find(arg0: (item: any) => any): any;
   id: string;
   category: string;
   brand: string;
