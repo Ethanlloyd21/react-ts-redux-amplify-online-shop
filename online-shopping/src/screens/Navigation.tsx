@@ -9,6 +9,7 @@ import Laptops from "./laptops/Laptops";
 import Tv from "./tv/Tv";
 import CartContainer from "./cart/CartContainer";
 
+
 const Navigation = () => {
   return (
     <>
