@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-onlineshopping-dev-73817-authRole",
+      "UnauthRoleArn": "arn:aws:iam::419092779688:role/amplify-onlineshopping-dev-73817-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::419092779688:role/amplify-onlineshopping-dev-73817-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-onlineshopping-dev-73817-deployment",
+      "UnauthRoleName": "amplify-onlineshopping-dev-73817-unauthRole",
+      "StackName": "amplify-onlineshopping-dev-73817",
+      "StackId": "arn:aws:cloudformation:us-east-1:419092779688:stack/amplify-onlineshopping-dev-73817/a4761e70-ec1b-11ed-ac36-0a571e6986fb",
+      "AmplifyAppId": "d1lrzbd0yti826"
+    }
+  }
+}
