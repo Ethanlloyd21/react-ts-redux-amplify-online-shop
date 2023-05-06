@@ -5,7 +5,6 @@ import { useAppSelector } from "../../hooks/hooks";
 import { CartItemProps } from "../../state/typesofCart";
 
 const Store = () => {
-
   // const { storeInventory } = useSelector((state: any) => state.store);
   // const dispath = useDispatch();
   const { storeInventory } = useAppSelector((state) => state.store)
